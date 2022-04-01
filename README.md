@@ -12,14 +12,16 @@ A customable time picker using analog clock format
 ## Screenshot
 
 <p float="left">
-    <img src="doc/screenshots/ss_minimal.jpg" width="200px">
-    <img src="doc/screenshots/ss_custom_bg.jpg" width="200px">
-    <img src="doc/screenshots/ss_custom_ring.jpg" width="200px">
+    <img src="https://raw.githubusercontent.com/yasfdany/analog_clock_picker/master/doc/screenshots/ss_minimal.jpg" width="200px">
+    <img src="https://raw.githubusercontent.com/yasfdany/analog_clock_picker/master/doc/screenshots/ss_custom_bg.jpg" width="200px">
+    <img src="https://raw.githubusercontent.com/yasfdany/analog_clock_picker/master/doc/screenshots/ss_custom_ring.jpg" width="200px">
 </p>
 
 ## Demo Video
 
-![](doc/videos/demo_video.mp4)
+<video id="demo" autoplay muted loop>
+  <source src="https://github.com/yasfdany/analog_clock_picker/raw/master/doc/videos/demo_video.mp4" type="video/mp4">
+</video>
 
 ## Getting started
 

@@ -29,13 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  AnalogClockController analogClockController = AnalogClockController(
-    value: DateTime.now(),
-    periodType: PeriodType.am,
-    onPeriodTypeChange: (date, period) {
-      //TODO : Do Something
-    },
-  );
+  AnalogClockController analogClockController = AnalogClockController();
 
   @override
   Widget build(BuildContext context) {
