@@ -1,4 +1,4 @@
-[![pub package](https://img.shields.io/badge/pub-v0.0.3-blue)](https://pub.dev/packages/analog_clock_picker)
+[![pub package](https://img.shields.io/badge/pub-v0.0.4-blue)](https://pub.dev/packages/analog_clock_picker)
 
 A customable time picker using analog clock format
 
@@ -20,7 +20,7 @@ A customable time picker using analog clock format
 ## Demo Video
 
 <p float="left">
-  <img src="doc/gif/demo.gif" width="200px">
+  <img src="https://raw.githubusercontent.com/yasfdany/analog_clock_picker/master/doc/gif/demo.gif" width="200px">
 </p>
 
 ## Getting started
@@ -29,7 +29,7 @@ Add package to `pubspec.yaml`
 
 ```yaml
 dependencies:
-    analog_clock_picker: 0.0.3
+    analog_clock_picker: 0.0.4
 ```
 
 ## How to use
