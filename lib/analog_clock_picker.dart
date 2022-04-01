@@ -77,6 +77,7 @@ class AnalogClockPicker extends StatefulWidget {
   final Widget? secondHandleWidget;
   final Widget? minutesHandleWidget;
   final Widget? hourHandleWidget;
+  final Widget? ringWidget;
   final AnalogClockController controller;
   final Function(DateTime dateTime)? onClockChange;
 
@@ -93,6 +94,7 @@ class AnalogClockPicker extends StatefulWidget {
     this.secondHandleWidget,
     this.minutesHandleWidget,
     this.hourHandleWidget,
+    this.ringWidget,
   }) : super(key: key);
 
   @override
@@ -151,6 +153,8 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
 
   @override
   Widget build(BuildContext context) {
+    radius = widget.size / 2;
+
     return SizedBox(
       key: key,
       width: widget.size,
@@ -214,18 +218,19 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
             centerPosition: centerPosition ?? Offset.zero,
             handleWidget: widget.minutesHandleWidget,
           ),
-          Container(
-            width: 20,
-            height: 20,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-              border: Border.all(
-                color: Colors.black,
-                width: 6,
+          widget.ringWidget ??
+              Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 6,
+                  ),
+                ),
               ),
-            ),
-          ),
         ],
       ),
     );

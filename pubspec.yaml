@@ -1,6 +1,6 @@
 name: analog_clock_picker
 description: package for pick time using analog clock.
-version: 0.0.2
+version: 0.0.3
 homepage: https://studiocloud.dev
 
 environment:
