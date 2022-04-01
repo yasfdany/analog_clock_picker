@@ -19,9 +19,7 @@ A customable time picker using analog clock format
 
 ## Demo Video
 
-<video id="demo" autoplay muted loop>
-  <source src="https://github.com/yasfdany/analog_clock_picker/raw/master/doc/videos/demo_video.mp4" type="video/mp4">
-</video>
+![](https://github.com/yasfdany/analog_clock_picker/raw/master/doc/videos/demo_video.mp4)
 
 ## Getting started
 
