@@ -1,4 +1,4 @@
-[![pub package](https://img.shields.io/badge/pub-v0.0.4-blue)](https://pub.dev/packages/analog_clock_picker)
+[![pub package](https://img.shields.io/badge/pub-v0.0.5-blue)](https://pub.dev/packages/analog_clock_picker)
 
 A customable time picker using analog clock format
 
@@ -29,7 +29,7 @@ Add package to `pubspec.yaml`
 
 ```yaml
 dependencies:
-    analog_clock_picker: 0.0.4
+    analog_clock_picker: 0.0.5
 ```
 
 ## How to use
@@ -52,17 +52,28 @@ AnalogClockController analogClockController = AnalogClockController(
 );
 ```
 
+you can set period change listener after initialize it
+
+```dart
+analogClockController.setOnPeriodTypeChangeListener((date, period) {
+      //TODO : Do Something
+});
+```
+
 Minimal usage
 
 ```dart
 AnalogClockPicker(
   controller: analogClockController,
   size: MediaQuery.of(context).size.width * 0.74,
-  secondHandleColor: const Color(0xfff64245),
+  secondHandleColor: Colors.red,
   minutesHandleColor: Colors.black,
   hourHandleColor: Colors.black,
   clockBackground: Image.asset(
     AssetImages.clockBackground,
   ),
+  onClockChange: (date){
+    //TODO : Do Something
+  },
 )
 ```

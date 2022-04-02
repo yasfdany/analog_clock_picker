@@ -1,4 +1,4 @@
-## 0.0.3
+## 0.0.5
 
 [0.0.1]
 
@@ -11,3 +11,8 @@ Fix minor bug
 [0.0.3]
 
 Add ability to custom ring widget
+
+[0.0.5]
+
+- Add default widget for clock background
+- Fix scaling problem in clock components
