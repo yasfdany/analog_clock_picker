@@ -2,6 +2,7 @@ library analog_clock_picker;
 
 import 'dart:math';
 
+import 'package:analog_clock_picker/clock_background_widget.dart';
 import 'package:analog_clock_picker/hour_handle_widget.dart';
 import 'package:analog_clock_picker/minutes_handle_widget.dart';
 import 'package:analog_clock_picker/second_handle_widget.dart';
@@ -9,9 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 //generate minutes angle
-List<double> minutesAngles = [for (int i = 0; i <= 60; i++) i * 6];
+final List<double> minutesAngles = [for (int i = 0; i <= 60; i++) i * 6];
 //generate hour angle
-List<double> hourAngles = [for (int i = 0; i <= 12; i++) i * 30];
+final List<double> hourAngles = [for (int i = 0; i <= 12; i++) i * 30];
 
 //Formula for calculating angle from two points
 double calculateAngle(Offset origin, Offset target) {
@@ -80,6 +81,9 @@ class AnalogClockPicker extends StatefulWidget {
   final Widget? ringWidget;
   final AnalogClockController controller;
   final Function(DateTime dateTime)? onClockChange;
+  final TextStyle? clockTextStyle;
+  final Color? minuteStickColor;
+  final Color? hourStickColor;
 
   const AnalogClockPicker({
     Key? key,
@@ -95,6 +99,9 @@ class AnalogClockPicker extends StatefulWidget {
     this.minutesHandleWidget,
     this.hourHandleWidget,
     this.ringWidget,
+    this.clockTextStyle,
+    this.minuteStickColor = Colors.black,
+    this.hourStickColor = Colors.black,
   }) : super(key: key);
 
   @override
@@ -170,7 +177,13 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
             width: widget.size + 10,
             height: widget.size + 10,
           ),
-          widget.clockBackground ?? Container(),
+          widget.clockBackground ??
+              ClockBackgroundWidget(
+                radius: radius,
+                textStyle: widget.clockTextStyle,
+                hourStickColor: widget.hourStickColor,
+                minuteStickColor: widget.minuteStickColor,
+              ),
           SecondHandleWidget(
             handleHeight: radius * 0.68,
             handleColor: widget.secondHandleColor,
@@ -197,6 +210,7 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
             },
             centerPosition: centerPosition ?? Offset.zero,
             handleWidget: widget.hourHandleWidget,
+            radius: radius,
           ),
           MinutesHandleWidget(
             handleColor: widget.minutesHandleColor,
@@ -217,20 +231,26 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
             },
             centerPosition: centerPosition ?? Offset.zero,
             handleWidget: widget.minutesHandleWidget,
+            radius: radius,
           ),
-          widget.ringWidget ??
-              Container(
-                width: 20,
-                height: 20,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 6,
+          widget.ringWidget != null
+              ? SizedBox(
+                  width: radius * 0.16,
+                  height: radius * 0.16,
+                  child: widget.ringWidget,
+                )
+              : Container(
+                  width: radius * 0.16,
+                  height: radius * 0.16,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.black,
+                      width: radius * 0.04,
+                    ),
                   ),
                 ),
-              ),
         ],
       ),
     );

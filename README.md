@@ -55,8 +55,6 @@ AnalogClockController analogClockController = AnalogClockController(
 Minimal usage
 
 ```dart
-AnalogClockController analogClockController = AnalogClockController();
-
 AnalogClockPicker(
   controller: analogClockController,
   size: MediaQuery.of(context).size.width * 0.74,

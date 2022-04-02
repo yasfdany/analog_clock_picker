@@ -11,6 +11,7 @@ class HourHandleWidget extends StatelessWidget {
   final Function(int hour) onDragHandleEnd;
   final Offset centerPosition;
   final Widget? handleWidget;
+  final double radius;
 
   const HourHandleWidget({
     Key? key,
@@ -19,6 +20,7 @@ class HourHandleWidget extends StatelessWidget {
     required this.controller,
     required this.onDragHandleEnd,
     required this.centerPosition,
+    required this.radius,
     this.handleWidget,
   }) : super(key: key);
 
@@ -55,7 +57,7 @@ class HourHandleWidget extends StatelessWidget {
                         color: handleColor,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      width: 10,
+                      width: radius * 0.068,
                       height: handleHeight,
                     ),
             ),
